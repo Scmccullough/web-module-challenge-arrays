@@ -45,8 +45,12 @@ Use the copy function below to do the following:
     2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-    /*your code here*/
+function copy(arr){
+    let arrCopy = arr.slice();
+    console.log(arr.slice());
+    // const arrCopy = arr;
+    // // console.log(arr);
+    return arrCopy;
 }    
 
 
@@ -64,8 +68,13 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-   /*your code here*/
+function is31Flavors(arr){
+   let flavors = 31;
+   if (arr.length === flavors){
+        return true;
+   }else{
+       return false;
+   }
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -81,8 +90,9 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-   /*your code here*/
+function addFlavor(arr, newFlavor){
+    arr.unshift(newFlavor);
+    return arr;
 }
 
 
@@ -97,8 +107,9 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
-   /*your code here*/
+function removeLastFlavor(arr){
+   arr.pop();
+   return arr;
 }
 
 
@@ -114,8 +125,10 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-    /*your code here*/
+function getFlavorByIndex(arr, num){
+    // arr.splice(num, 1);
+    // console.log(arr);
+    return arr[num];
 }
 
 
@@ -134,8 +147,10 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+function removeFlavorByName(arr, string){
+    let index = arr.indexOf(string);
+    arr.splice(index, 1);
+    return arr;
 }
 
 
@@ -163,7 +178,7 @@ Use the filterByWord function below to do the following:
 function filterByWord(array, string){
     const newArray = [];
     for(let i = 0; i < array.length; i++){
-        if(arr[i].includes(string)){
+        if(array[i].includes(string)){
             newArray.push(array[i]);
         }
     }
